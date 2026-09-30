@@ -45,7 +45,7 @@ export function InviteNudge() {
         <p className="flex-1 text-sm">
           <span className="font-mono text-secondary">@{ref}</span> {t('inviteNudge.message')}
         </p>
-        <button onClick={dismiss} aria-label={t('inviteNudge.dismiss')} className="-my-1 shrink-0 inline-grid size-8 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime">
+        <button onClick={dismiss} aria-label={t('inviteNudge.dismiss')} className="inline-grid size-8 place-items-center rounded-full shrink-0 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
           <X className="size-4" />
         </button>
       </div>

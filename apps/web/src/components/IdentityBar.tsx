@@ -41,7 +41,7 @@ const sameAvatar = (a?: AvatarConfig, b?: AvatarConfig) => JSON.stringify(a) ===
  * Identity bar — your @handle as the profile ID, with inline claim/edit (re-stamps the
  * handle on-chain) + share + public-profile link. The handle was claimed at onboarding;
  * editing renames it on the registry. Your face and bio are published on the registry
- * (`set_meta`) so every viewer of /u/<Handle> and its share card sees them; the local
+ * (`set_meta`) so every viewer of /u/<handle> and its share card sees them; the local
  * profile is the instant cache.
  */
 export function IdentityBar() {
@@ -195,7 +195,7 @@ export function IdentityBar() {
             <button
               type="button"
               onClick={() => setEditing(false)}
-              className="inline-grid size-8 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime"
+              className="inline-grid size-8 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-label={t('identity.cancel')}
             >
               <X className="size-4" />
@@ -219,7 +219,7 @@ export function IdentityBar() {
                 setValue(profile.handle);
                 setEditing(true);
               }}
-              className="-my-1 inline-grid size-8 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime"
+              className="inline-grid size-8 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-label={t('identity.editHandle')}
             >
               <Pencil className="size-3.5" />
@@ -257,7 +257,7 @@ export function IdentityBar() {
               aria-label={t('identity.bio.label')}
             />
             <span
-              className="shrink0 font-mono text-[10px] text-muted-foreground"
+              className="shrink-0 font-mono text-[10px] text-muted-foreground"
               title={t('identity.bio.bytesHint')}
             >
               {bioBytes(bioValue)}/{BIO_MAX_BYTES}
@@ -268,7 +268,7 @@ export function IdentityBar() {
             <button
               type="button"
               onClick={() => setEditingBio(false)}
-              className="inline-grid size-8 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime"
+              className="inline-grid size-8 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-label={t('identity.bio.cancel')}
             >
               <X className="size-3.5" />
@@ -277,7 +277,7 @@ export function IdentityBar() {
         ) : (
           <>
             {profile.bio ? (
-              <p className="min-w-0 truncate texe-xs text-muted-foreground">{profile.bio}</p>
+              <p className="min-w-0 truncate text-xs text-muted-foreground">{profile.bio}</p>
             ) : (
               <span className="font-mono text-[10px] text-muted-foreground">
                 {t('identity.bio.add')}
@@ -289,7 +289,7 @@ export function IdentityBar() {
                 setEditingBio(true);
               }}
               disabled={savingMeta}
-              className="-my-1 shrink-0 inline-grid size-8 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime disabled:opacity-50"
+              className="inline-grid size-8 place-items-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50"
               aria-label={t('identity.bio.edit')}
             >
               <Pencil className="size-3" />
@@ -319,15 +319,3 @@ export function IdentityBar() {
               </button>
             ))}
           </div>
-          <div className="flex justify-center">
-            {tab === 'faces' ? (
-              <AvatarPicker address={profile.address} onChange={chooseFace} />
-            ) : (
-              <AvatarRemix address={profile.address} onChange={chooseKit} />
-            )}
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
