@@ -63,6 +63,11 @@ const config: Config = {
           2: 'hsl(var(--surface-2) / <alpha-value>)',
         },
       },
+      fontSize: {
+        /** Micro label — the floor of the type scale (11px). Use for dense metadata,
+         *   chips and mono kickers; never go below this. */
+        '2xs': ['0.6875rem', { lineHeight: '1' }],
+      },
       fontFamily: {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],

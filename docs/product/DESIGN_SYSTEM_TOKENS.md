@@ -156,9 +156,12 @@ the dark label (4.73:1); the light theme's 60% violet keeps white (5.30:1). `flo
 | `body` | 1rem / 1.6, sans | default |
 | `small` | 0.875rem / 1.5 | secondary |
 | `caption` | 0.75rem / 1.4, muted | meta, timestamps |
+| `2xs` | 0.6875rem / 1.4 | micro labels (never below 11px) |
 | `mono` | 0.875rem / 1.5, mono | addresses, hashes |
 
-Load with `next/font` (variable, `display: "swap"`, subset latin). Headings get
+Uppercase kickers use the `eyebrow` (0.22em) and `eyebrow-mono` utilities — no hand-rolled
+letter-spacings. Load with `next/font` (variable, `display: "swap"`, subsets `latin` and
+`latin-ext` so Turkish ğ, ş and İ render in the brand fonts on first paint). Headings get
 `font-feature-settings` defaults; mono for any `G…`/hash with middle-truncation.
 
 ## 3. Spacing, radius, layout
