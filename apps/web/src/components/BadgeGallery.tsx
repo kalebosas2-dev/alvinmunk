@@ -100,7 +100,7 @@ function BadgeTile({ badge }: { badge: Badge }) {
         {t(`${key}.name`)}
         <span className="sr-only"> — {t(badge.earned ? 'badges.earned' : 'badges.locked')}</span>
       </p>
-      <p className="eyebrow-mono leading-tight text-muted-foreground">
+      <p className="font-mono text-2xs uppercase leading-tight tracking-wider text-muted-foreground">
         <BadgeDetail badge={badge} t={t} />
       </p>
     </li>

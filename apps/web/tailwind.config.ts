@@ -64,9 +64,8 @@ const config: Config = {
         },
       },
       fontSize: {
-        /** Micro label — the floor of the type scale (11px). Use for dense metadata,
-         *   chips and mono kickers; never go below this. */
-        '2xs': ['0.6875rem', { lineHeight: '1' }],
+        // The floor of the type scale (11px): dense metadata, chips, hints. Nothing goes below it.
+        '2xs': ['0.6875rem', { lineHeight: '1rem' }],
       },
       fontFamily: {
         display: ['var(--font-display)', 'system-ui', 'sans-serif'],
